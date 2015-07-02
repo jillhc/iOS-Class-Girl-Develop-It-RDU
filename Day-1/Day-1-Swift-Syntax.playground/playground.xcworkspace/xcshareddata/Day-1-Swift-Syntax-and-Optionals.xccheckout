@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>03993731-0434-46A1-B588-8865F9A78007</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Day-1-Swift-Syntax-and-Optionals</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0E12F3F8D12D66765D911A2E8326C586FE003E06</key>
+		<string>github.com:jillhc/iOS-Class-Girl-Develop-It-RDU.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Day-1/Day-1-Swift-Syntax-and-Optionals.playground</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0E12F3F8D12D66765D911A2E8326C586FE003E06</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:jillhc/iOS-Class-Girl-Develop-It-RDU.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0E12F3F8D12D66765D911A2E8326C586FE003E06</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0E12F3F8D12D66765D911A2E8326C586FE003E06</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-Class-Girl-Develop-It-RDU</string>
+		</dict>
+	</array>
+</dict>
+</plist>
