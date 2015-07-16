@@ -11,22 +11,24 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var greetingLabel: UILabel!
- 
+
+    let hello = "hello"
+    let goodbye = "goodbye"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Access or change a label's text using [nameOfVariable].text
-        greetingLabel.text = "hello"
+        greetingLabel.text = hello
     }
     
     
     @IBAction func flipGreeting() {
-        // Currently, this changes the greeting once to "goodbye"
-
-        greetingLabel.text = "goodbye"
-
-        // Take home exercise:
-        // Tapping the button flips the greeting between "hello" and "goodbye"
+        if greetingLabel.text == hello {
+            greetingLabel.text = goodbye
+        } else {
+            greetingLabel.text = hello
+        }
     }
 
 }
