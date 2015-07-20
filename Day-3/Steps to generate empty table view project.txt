@@ -1,0 +1,19 @@
+Steps to replicate this:
+1. Create a new project
+2. In the storyboard, add:
+    - Text field (add placeholder text if desired)
+    - Button (set title to "Add")
+    - Table view
+    - Choose from Editor drop-down "Embed in Navigation Controller"
+    - Make sure that when the yellow view controller icon is selected on the main screen, the name of your view controller subclass shows up in right Inspector panel's Identity inspector (3rd icon) as the "Class".
+3. Configure the table view in the storyboard:
+    - Connect it to your View Controller subclass, and create an IBOutlet named "tableView"
+    - Add a prototype cell to the table view (if it isn't there already) and choose style "Basic" on the Inspector panel 4th icon
+    - Set the reuse identifier to whatever it will be for your cell
+4. Set your view controller subclass as the object supplying the table view with information (aka its delegate and data source)
+    - In the class declaration, add the names of the protocols it conforms to (UITableViewDelegate, UITableViewDataSource) AFTER the class it's subclassing (UIViewController)
+    - In viewDidLoad, set the table view's data source and delegate properties to "self," which is the current instance of your view controller subclass
+5. Create a property "toDoItems" that's an empty Array of Strings. You'll use this to supply the table view with data.
+    
+    
+Note: If in another project your entire screen ONLY has a table view on it (i.e., no text field, button, etc. -- navigation bars don't count), you can subclass UITableViewController and use it as the only view controller for that screen. In that case, #3.1 and #4 above can be skipped. There are many online tutorials that cover the steps, too. (They may be in Objective-C, but the concepts are the same.)
