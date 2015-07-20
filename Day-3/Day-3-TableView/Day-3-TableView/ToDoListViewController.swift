@@ -21,26 +21,44 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Set the tableviews' delegate and data source to this instance of ToDoListViewController
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
+        // Set the tableviews' delegate and data source to this instance of ToDoListViewController
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.editing = editing
+    }
 
 //MARK: Actions
     @IBAction func addToDoItem() {
         let newItem = toDoItemTextField.text
         toDoItems.append(newItem)
         toDoItemTextField.text = ""
+
+        tableView.reloadData()
     }
 
 
 //MARK: TableView Data Source & Delegate methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        return toDoItems.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(toDoCellIdentifier) as! UITableViewCell
+        cell.textLabel?.text = toDoItems[indexPath.row]
+        return cell
+    }
 
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            toDoItems.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
     }
 
 }
