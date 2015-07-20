@@ -13,7 +13,7 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var toDoItemTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
 
-    var toDoItems = [String]()
+    var toDoItems = [ToDoItem]()
     let toDoCellIdentifier = "toDoCellIdentifier"
 
     
@@ -35,8 +35,11 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, UITableVi
 
 //MARK: Actions
     @IBAction func addToDoItem() {
-        let newItem = toDoItemTextField.text
-        toDoItems.append(newItem)
+        let newToDoItem = ToDoItem()
+        newToDoItem.title = toDoItemTextField.text
+        newToDoItem.dateCreated = NSDate()
+
+        toDoItems.append(newToDoItem)
         toDoItemTextField.text = ""
 
         tableView.reloadData()
@@ -50,7 +53,9 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, UITableVi
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(toDoCellIdentifier) as! UITableViewCell
-        cell.textLabel?.text = toDoItems[indexPath.row]
+
+        let toDoItem = toDoItems[indexPath.row]
+        cell.textLabel?.text = toDoItem.title
         return cell
     }
 
