@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7117D3741B5D3B6B00108C38 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7117D3731B5D3B6B00108C38 /* ToDoItem.swift */; };
 		7117D3781B5D3CCF00108C38 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7117D3771B5D3CCF00108C38 /* DetailViewController.swift */; };
+		7117D3AA1B5D46C000108C38 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7117D3A91B5D46C000108C38 /* AddItemViewController.swift */; };
 		711804851B5BFE1E0071935B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711804841B5BFE1E0071935B /* AppDelegate.swift */; };
 		7118048A1B5BFE1E0071935B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711804881B5BFE1E0071935B /* Main.storyboard */; };
 		7118048C1B5BFE1E0071935B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7118048B1B5BFE1E0071935B /* Images.xcassets */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		7117D3731B5D3B6B00108C38 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		7117D3771B5D3CCF00108C38 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7117D3A91B5D46C000108C38 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		7118047F1B5BFE1E0071935B /* Day-3-TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day-3-TableView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		711804831B5BFE1E0071935B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		711804841B5BFE1E0071935B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,8 +86,9 @@
 				711804841B5BFE1E0071935B /* AppDelegate.swift */,
 				711804A41B5BFFC40071935B /* ToDoListViewController.swift */,
 				7117D3771B5D3CCF00108C38 /* DetailViewController.swift */,
-				711804881B5BFE1E0071935B /* Main.storyboard */,
+				7117D3A91B5D46C000108C38 /* AddItemViewController.swift */,
 				7117D3731B5D3B6B00108C38 /* ToDoItem.swift */,
+				711804881B5BFE1E0071935B /* Main.storyboard */,
 				7118048B1B5BFE1E0071935B /* Images.xcassets */,
 				7118048D1B5BFE1E0071935B /* LaunchScreen.xib */,
 				711804821B5BFE1E0071935B /* Supporting Files */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7117D3AA1B5D46C000108C38 /* AddItemViewController.swift in Sources */,
 				711804851B5BFE1E0071935B /* AppDelegate.swift in Sources */,
 				7117D3741B5D3B6B00108C38 /* ToDoItem.swift in Sources */,
 				7117D3781B5D3CCF00108C38 /* DetailViewController.swift in Sources */,

@@ -8,17 +8,31 @@
 
 import UIKit
 
-class ToDoListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ToDoListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddItemDelegate {
 
+    // Outlet properties
     @IBOutlet weak var toDoItemTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
 
+    // Model
     var toDoItems = [ToDoItem]()
-    let toDoCellIdentifier = "toDoCellIdentifier"
-    let detailSegueIdentifier = "detail"
 
+    // String constants
+    let toDoCellIdentifier = "toDoCell"
+    let detailSegueIdentifier = "detail"
+    let addSegueIdentifier = "add"
     
 //MARK: View lifecycle & Navigation
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // If a cell is selected, deselect it, so when the view appears it's not still gray
+        // Try commenting this line out and see the difference
+        if let indexPath = self.tableView.indexPathForSelectedRow() {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,11 +54,10 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, UITableVi
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let toDoItem = self.toDoItems[indexPath.row]
                 destination.toDoItem = toDoItem
-
-                // Deselect the cell, so when the user returns it's not still gray
-                // Try commenting this line out and see the difference
-                self.tableView.deselectRowAtIndexPath(indexPath, animated: false)
             }
+        } else if segue.identifier == self.addSegueIdentifier {
+            let destination = segue.destinationViewController as! AddItemViewController
+            destination.delegate = self
         }
     }
 
@@ -82,4 +95,11 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
 
+
+// MARK: Add item delegate
+    func addItemViewControllerDidFinish(newToDoItem: ToDoItem) {
+        self.toDoItems.append(newToDoItem)
+        self.tableView.reloadData()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

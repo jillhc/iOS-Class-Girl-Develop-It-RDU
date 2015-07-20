@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bj-8R-BSi">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quick add (use + to include a note)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bj-8R-BSi">
                                 <rect key="frame" x="16" y="82" width="286" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -51,7 +51,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="555"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="toDoCellIdentifier" textLabel="lT9-9h-acY" style="IBUITableViewCellStyleDefault" id="YjI-pK-BA6">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="toDoCell" textLabel="lT9-9h-acY" style="IBUITableViewCellStyleDefault" id="YjI-pK-BA6">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YjI-pK-BA6" id="q2C-JV-K6m">
@@ -74,7 +74,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="To Do List" id="jN1-GD-Ivb"/>
+                    <navigationItem key="navigationItem" title="To Do List" id="jN1-GD-Ivb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bEH-uj-Ru0">
+                            <connections>
+                                <segue destination="cC5-lI-E3G" kind="presentation" identifier="add" id="jGc-qt-HmW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="vuT-uU-M24" id="iLi-pm-Phf"/>
@@ -84,6 +90,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jX-aj-MeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-181.5" y="-874.5"/>
+        </scene>
+        <!--Add Item View Controller-->
+        <scene sceneID="P1F-Dd-ZmS">
+            <objects>
+                <viewController id="cC5-lI-E3G" customClass="AddItemViewController" customModule="Day_3_TableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Bk-9c-2xd"/>
+                        <viewControllerLayoutGuide type="bottom" id="ABi-B7-xQ5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iTM-Ll-TCg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZMd-0Z-TV0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="New Item" id="r7v-lM-Oio">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="X1a-L5-8Ab">
+                                            <connections>
+                                                <action selector="done:" destination="cC5-lI-E3G" id="6AP-Yc-ysZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Optional" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2v-0c-hhD">
+                                <rect key="frame" x="73" y="159" width="286" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVb-pA-kQn">
+                                <rect key="frame" x="23" y="102" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f36-xW-9KK">
+                                <rect key="frame" x="23" y="159" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Wf-L5-GN9">
+                                <rect key="frame" x="73" y="102" width="286" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="noteTextField" destination="h2v-0c-hhD" id="Zqe-at-BDx"/>
+                        <outlet property="titleTextField" destination="6Wf-L5-GN9" id="nNJ-Bj-Iqe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fzx-fE-cGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="379.5" y="-1305.5"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="3dT-OE-YGz">
@@ -145,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xcB-fX-8DP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247.5" y="-874.5"/>
+            <point key="canvasLocation" x="379.5" y="-588.5"/>
         </scene>
     </scenes>
 </document>
