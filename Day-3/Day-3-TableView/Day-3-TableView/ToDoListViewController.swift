@@ -81,10 +81,11 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(toDoCellIdentifier) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(toDoCellIdentifier) as! ToDoCell
 
         let toDoItem = self.toDoItems[indexPath.row]
-        cell.textLabel?.text = toDoItem.title
+        cell.titleLabel.text = toDoItem.title
+        cell.hasNoteLabel.hidden = toDoItem.note == nil
         return cell
     }
 
