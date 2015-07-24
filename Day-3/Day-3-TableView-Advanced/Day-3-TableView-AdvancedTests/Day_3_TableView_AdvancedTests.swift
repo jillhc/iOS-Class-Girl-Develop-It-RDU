@@ -1,15 +1,15 @@
 //
-//  Day_3_TableViewTests.swift
-//  Day-3-TableViewTests
+//  Day_3_TableView_AdvancedTests.swift
+//  Day-3-TableView-AdvancedTests
 //
-//  Created by Jill Cohen on 7/19/15.
+//  Created by Jill Cohen on 7/24/15.
 //  Copyright (c) 2015 Jill Cohen. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class Day_3_TableViewTests: XCTestCase {
+class Day_3_TableView_AdvancedTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

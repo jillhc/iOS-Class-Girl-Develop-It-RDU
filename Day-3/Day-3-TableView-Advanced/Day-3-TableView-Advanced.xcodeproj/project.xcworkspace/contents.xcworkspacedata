@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Day-3-TableView.xcodeproj">
+      location = "self:Day-3-TableView-Advanced.xcodeproj">
    </FileRef>
 </Workspace>
